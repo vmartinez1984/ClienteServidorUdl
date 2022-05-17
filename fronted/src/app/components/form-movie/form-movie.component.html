@@ -1,0 +1,26 @@
+<br/><br/><br/>
+<div class="row">
+    <div class="col-5">
+    <div class="container">
+        <div class="card">
+        <form>
+            <div class="card-header">
+                Agregar pelicula
+            </div>
+            
+            <div class="card-body">
+                <input class="form-control" id="nombre" name="nombre" [(ngModel)]="movie.nombre" placeholder="Nombre">
+                <input class="form-control mt-2" id="director" name="director" [(ngModel)]="movie.director" placeholder="Director">
+                <input class="form-control mt-2" id="distribuidora" name="distribuidora" [(ngModel)]="movie.distribuidora" placeholder="Distrbuidora">
+                <input class="form-control mt-2" type="number" id="anio" name="anio" [(ngModel)]="movie.anio" placeholder="Año">
+                <input class="form-control mt-2" id="sinopsis" name="sinopsis" [(ngModel)]="movie.sinopsis" placeholder="Sinopsis">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary float-start" (click)="save()">Guardar</button>
+                <button class="btn btn-secondary float-end" routerLink="/">Lista de peliculas</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+</div>

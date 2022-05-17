@@ -1,0 +1,25 @@
+<br/><br/><br/>
+<div class="container">
+    <h1 class="text-primary">Lista de peliculas</h1>
+
+    <div class="card mt-4" *ngFor="let movie of movies">
+        <div class="card-header">
+            <h3 class="text-default">{{movie.nombre}}</h3>
+        </div>
+        <div class="card-body">            
+            <p>{{movie.sinopsis}}</p>
+        </div>
+        <div class="card-footer">    
+            <div class="row">
+                <div class="col-8">
+                    <p>{{movie.anio}} {{movie.distribuidora}} <br/> {{movie.director}}</p>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-warning text-white float-start" (click)="edit(movie)">Editar</button>
+                    <button class="btn btn-danger float-end" routerLink="/">Borrar</button>
+                </div>
+            </div>        
+        </div>
+    </div>
+    
+</div>
