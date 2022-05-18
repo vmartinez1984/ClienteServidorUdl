@@ -8,6 +8,9 @@ import { Movie } from './movie';
   providedIn: 'root'
 })
 export class MoviesService {
+  delete(_id: string): Observable<any> {
+    return this.httpClient.delete(environment.ApiUrl + "/peliculas/"+_id);
+  }
   update(movie: Movie): Observable<any> {
     return this.httpClient.put(environment.ApiUrl + "/peliculas/"+movie._id,movie)
   }

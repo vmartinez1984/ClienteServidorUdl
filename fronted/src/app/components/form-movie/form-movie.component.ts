@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Movie } from '../movie';
 import { MoviesService } from '../movies.service';
 
@@ -14,13 +14,14 @@ export class FormMovieComponent implements OnInit {
 
   constructor(
     private service: MoviesService,
-    private activateRoute: ActivatedRoute,    
+    private activateRoute: ActivatedRoute,   
+    private router : Router 
   ) { }
 
   ngOnInit(): void {    
     this.id = this.activateRoute.snapshot.paramMap.get('id');
     console.log(this.id);
-    if(this.id){
+    if(this.id != null){
       this.service.getById(this.id).subscribe(response=>{
         //console.log(response);
         this.movie = response;
@@ -28,16 +29,19 @@ export class FormMovieComponent implements OnInit {
     }
   }
 
-  save(){  
+  save(){
+    console.log(this.id)  ;
     if(this.isValid()){
-      if(this.id){
-        this.service.update(this.movie).subscribe(response=>{
-          console.log("Datos actualizados")
-        })
-      }else{
+      if(this.id == null){
         this.service.add(this.movie).subscribe(response =>{
           console.log("Datos registrados");
+          this.router.navigate(["list-movies"])
         });
+      }else{
+        this.service.update(this.movie).subscribe(response=>{
+          console.log("Datos actualizados")
+          this.router.navigate(["list-movies"])
+        })
       }
     }  
   }

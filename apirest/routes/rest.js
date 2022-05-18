@@ -20,13 +20,20 @@ router.get("/api/peliculas", async (req, res)=>{
 router.post("/api/peliculas", async (request, response)=>{
     try{    
         const pelicula = request.body;
-        const repository = new peliculaRepository(pelicula);
+        const repository = new peliculaRepository({
+            nombre : pelicula.nombre,     
+            director: pelicula.director,
+            distribuidora: pelicula.distribuidora,
+            anio: pelicula.anio,
+            sinopsis: pelicula.sinopsis,
+            url: pelicula.url
+        });
         const responseRepository = await repository.save();
         //console.log(responseRepository);
         response.status(200).json({ _id : responseRepository._id});
     }catch(error){
         console.log(error);
-        reponse.status(500).send("Ocurrio un error");
+        reponse.status(500).json(error);
     }
 })
 
@@ -62,6 +69,17 @@ router.get("/api/peliculas/:id", async(request, response)=>{
             reponse.status(404);           
         
         response.json(pelicula);
+    }catch(error){
+        console.log(error);
+        reponse.status(500).json(error);
+    }
+})
+
+router.delete("/api/peliculas/:id", async(request, response)=>{
+    try{    
+        const id = request.params.id;
+        const pelicula = await peliculaRepository.deleteOne({_id : mongoose.Types.ObjectId(id)});
+        response.status(202).json(pelicula);
     }catch(error){
         console.log(error);
         reponse.status(500).json(error);

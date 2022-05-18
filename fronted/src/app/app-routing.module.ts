@@ -5,6 +5,7 @@ import { ListMoviesComponent } from './components/list-movies/list-movies.compon
 
 const routes: Routes = [
   {path: '', component: ListMoviesComponent},
+  {path: 'list-movies', component: ListMoviesComponent},
   {path: 'movies', component: ListMoviesComponent},
   {path: 'add-movie', component: FormMovieComponent},
   {path: 'edit-movie/:id', component: FormMovieComponent}

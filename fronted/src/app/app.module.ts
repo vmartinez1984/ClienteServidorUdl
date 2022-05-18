@@ -7,12 +7,14 @@ import { ListMoviesComponent } from './components/list-movies/list-movies.compon
 import { FormMovieComponent } from './components/form-movie/form-movie.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './templates/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,    
     ListMoviesComponent,
     FormMovieComponent,
+    MenuComponent,
     
   ],
   imports: [
