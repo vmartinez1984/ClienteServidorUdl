@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "55fa2a7d-ffda-41c9-8c4a-dabccd381837",
+		"name": "Udl Cliente Servidor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2660252"
+	},
+	"item": [
+		{
+			"name": "Agregar pelicula",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\" : \"La era de hielo\",\n    \"sinopsis\" : \"Animales en la era de hielo\",\n    \"director\" : \"director\",\n    \"distribuidora\" : \"Pixar\",\n    \"anio\": 2002,\n    \"url\": \"/video/LaEraDeHielo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener lista de peliculas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\" : \"La era de hielo\",\n    \"sinopsis\" : \"Animales en la era de hielo\",\n    \"director\" : \"director\",\n    \"distribuidora\" : \"Pixar\",\n    \"anio\": 2002,\n    \"url\": \"/video/LaEraDeHielo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/peliculas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar pelicula",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\" : \"La era de hielo 2\",\n    \"sinopsis\" : \"Animales en la era de hielo\",\n    \"director\" : \"director\",\n    \"distribuidora\" : \"Pixar\",\n    \"anio\": 2002,\n    \"url\": \"/video/LaEraDeHielo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/peliculas/628305f3c5f24e1e9b395317",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"peliculas",
+						"628305f3c5f24e1e9b395317"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener pelicula",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\" : \"La era de hielo\",\n    \"sinopsis\" : \"Animales en la era de hielo\",\n    \"director\" : \"director\",\n    \"distribuidora\" : \"Pixar\",\n    \"anio\": 2002,\n    \"url\": \"/video/LaEraDeHielo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/peliculas/627dc5725f61b12812aa2302",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"peliculas",
+						"627dc5725f61b12812aa2302"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar pelicula",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\" : \"La era de hielo\",\n    \"sinopsis\" : \"Animales en la era de hielo\",\n    \"director\" : \"director\",\n    \"distribuidora\" : \"Pixar\",\n    \"anio\": 2002,\n    \"url\": \"/video/LaEraDeHielo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/peliculas/628305cd107660923f51ab9f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"peliculas",
+						"628305cd107660923f51ab9f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
